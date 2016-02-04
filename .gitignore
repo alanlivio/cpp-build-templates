@@ -1,6 +1,7 @@
 *.creator.user
 *cbp
 
+src/*.pc
 programs/*_program
 tests/*_test
 tests/*_helper
@@ -237,8 +238,6 @@ obj/
 Session.vim
 .netrwhist
 *~
-
-# Created by https://www.gitignore.io
 
 ### Qt ###
 # C++ objects and libs
