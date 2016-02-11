@@ -17,4 +17,4 @@ target_link_libraries(testsuit_gtest ${GTEST_LIBRARIES})
 target_link_libraries(testsuit_gtest ${GFLAGS_LIBRARIES})
 
 # tests
-add_test(unittests testsuit)
+add_test(unittests testsuit_gtest)
