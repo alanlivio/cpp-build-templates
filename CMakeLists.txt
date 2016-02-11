@@ -7,7 +7,7 @@ set(CMAKE_CXX_FLAGS "-Wno-cpp")
 
 # project configuration
 #------------------------------------------------------------------
-project(helloworld CXX C)
+project(cpp_template_cmake CXX C)
 SET(PACKAGE "helloworld")
 SET(PACKAGE_NAME ${PACKAGE})
 SET(PACKAGE_VERSION_MAJOR "1")
