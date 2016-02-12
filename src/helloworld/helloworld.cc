@@ -7,6 +7,6 @@ HelloWorld::HelloWorld() {
 }
 
 const char *
-HelloWorld::GetHello() {
+HelloWorld::get_hello_msg() {
   return this->hello_;
 }

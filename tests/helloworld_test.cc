@@ -10,6 +10,6 @@ using ::std::cout;
 
 int main(int argc, char **argv) {
   HelloWorld test;
-  assert(strcmp("Hello world!", test.GetHello()) == 0);
+  assert(strcmp("Hello world!", test.get_hello_msg()) == 0);
   return EXIT_SUCCESS;
 }

@@ -7,7 +7,7 @@ class HelloWorld {
  public:
   HelloWorld();
   const char *
-  GetHello();
+  get_hello_msg();
 
  private:
   const char * hello_;
