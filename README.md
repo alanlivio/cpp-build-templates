@@ -11,6 +11,12 @@ This template provides:
 * [googletest](https://code.google.com/p/googletest/) support
 * [cpplint](https://github.com/google/styleguide/tree/gh-pages/cpplint) support
 
+## Build
+``` bashscript
+cmake .
+make
+``` 
+
 ## References
 The code are inspired in projects like:
 
