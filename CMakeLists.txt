@@ -18,7 +18,32 @@ SET(PACKAGE_STRING "${PACKAGE_NAME} ${PACKAGE_VERSION}")
 
 # dependecies
 #------------------------------------------------------------------
-include("cmake/deps.cmake")
+find_package(PkgConfig)
+find_package(Threads)
+# gflags
+find_package(gflags QUIET)
+if(NOT GFLAGS_FOUND)
+  message(STATUS "Not found gflags. Will use external_deps/")
+  set(GFLAGS_INCLUDE_DIRS ${CMAKE_CURRENT_LIST_DIR}/external_deps/include)
+  set(GFLAGS_LIBRARIES ${CMAKE_CURRENT_LIST_DIR}/external_deps/lib/libgflags.a ${CMAKE_THREAD_LIBS_INIT})
+  set(GFLAGS_LIBRARY_DIRS ${CMAKE_CURRENT_LIST_DIR}/external_deps/lib)
+endif()
+# glog
+find_package(glog QUIET)
+if(NOT GLOG_FOUND)
+  message(STATUS "Not found glog. Will use external_deps/")
+  set(GLOG_INCLUDE_DIRS ${CMAKE_CURRENT_LIST_DIR}/external_deps/include)
+  set(GLOG_LIBRARIES ${GFLAGS_LIBRARIES} ${CMAKE_CURRENT_LIST_DIR}/external_deps/lib/libglog.a)
+  set(GLOG_LIBRARY_DIRS ${CMAKE_CURRENT_LIST_DIR}/external_deps/lib)
+endif()
+# gtest
+find_package(gtest QUIET)
+if(NOT GTEST_FOUND)
+  message(STATUS "Not found gtest. Will use external_deps/")
+  set(GTEST_INCLUDE_DIRS ${CMAKE_CURRENT_LIST_DIR}/external_deps/src/gtest/include/)
+  set(GTEST_LIBRARIES ${CMAKE_CURRENT_LIST_DIR}/external_deps/src/gtest-build/libgtest.a ${CMAKE_THREAD_LIBS_INIT})
+  set(GTEST_LIBRARY_DIRS ${CMAKE_CURRENT_LIST_DIR}/external_deps/src/gtest-build/)
+endif()
 
 # fsmda and programs
 #------------------------------------------------------------------
